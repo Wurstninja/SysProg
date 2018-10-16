@@ -16,11 +16,11 @@ node* add(node* head, int data);
 void printList(node*);
 int main()
 {
-    node* new=malloc(sizeof(node));
-    new=NULL;
-    new = add(new,1);
-    new = add(new,2);
-    new = add(new,3);
+    node* list = NULL;
+    list = add(list,1);
+    // works up to here
+    list = add(list,2);
+    list = add(list,3);
     return 0;
 }
 
@@ -28,19 +28,19 @@ node* add(node* head, int data)
 {
     if(head==NULL)
     {
-        head->data=data;
-        head->next=NULL;
+        node* new = malloc(sizeof(node));
+        new->data=data;
+        new->next=NULL;
+        return new;
     }
     else
     {
         node* cur;
         cur=malloc(sizeof(node));
         head->next=cur;
-        printf("pre\n")
         while(cur!=NULL)
         {
-            printf("in\n");
-            cur->next=cur;
+            printf("in\n");cur->next=cur;
         }
         cur->data=data;
         cur->next=NULL;
