@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// change
-
 typedef struct node
 {
     struct node* head;
@@ -18,41 +16,39 @@ int main()
 {
     node* list = NULL;
     list = add(list,1);
-    // works up to here
     list = add(list,2);
     list = add(list,3);
+    printList(list);
     return 0;
 }
 
 node* add(node* head, int data)
 {
+    node* new = malloc(sizeof(node));
+    new->data=data;
+    new->next=NULL;
     if(head==NULL)
     {
-        node* new = malloc(sizeof(node));
-        new->data=data;
-        new->next=NULL;
         return new;
     }
     else
     {
-        node* cur;
-        cur=malloc(sizeof(node));
-        head->next=cur;
-        while(cur!=NULL)
+        node* cur = head;
+        while(cur->next != NULL)
         {
-            printf("in\n");cur->next=cur;
+            cur = cur->next;
         }
-        cur->data=data;
-        cur->next=NULL;
+        cur->next = new;
+        return head;
     }
-    return head;
 }
 
 void printList(node* head)
 {
-    node* cur;
+    node* cur = head;
     while (cur!=NULL)
     {
         printf("%i\n",cur->data);
+        cur = cur->next;
     }
 }
