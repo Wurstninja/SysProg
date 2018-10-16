@@ -1,17 +1,39 @@
-.DEFAULT_GOAL := p
-CC=gcc
-CFLAGS=-g -Wall
+.DEFAULT_GOAL := run
 
-genlist: genlist.c 
-	$(CC) -c genlist.c $(CCFLAGS)
+###   CHANGE   ###
+LIBS :=
+NAME := exe
+DIR := #build/
+CC  := gcc
+CFLAGS := -g -W
+### END CHANGE ###
 
-p: genlist.o main.c
-	$(CC) -o p main.c genlist.o $(CFLAGS)
+SRC = $(wildcard *.c) # careful with test.c etc
+DEPS := $(wildcard *.h)
+OBJECTS :=$(patsubst %.c,$(DIR)%.o,$(wildcard *.c))
+
+dir_exists: | $(DIR)
+	@echo 
+
+$(DIR)%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(NAME): $(OBJECTS)
+	$(CC) -o $(DIR)$@ $^ $(CFLAGS)
 
 clean: 
-	rm p *.o
+	@echo $(shell rm $(DIR)$(NAME) $(OBJECTS))
+	$(shell > DIR)
+#@echo $(shell rm -r -f $(DIR))
 
 run:
-	@echo $(shell make)
-	$(shell export PATH=$PATH:)
-	@echo $(shell p)
+	$(shell make dir_exists)
+	@echo $(shell make $(NAME))
+	@echo $(shell ./$(DIR)$(NAME))
+
+v:
+	@echo $(shell make $(NAME))
+	@echo $(shell valgrind ./$(DIR)$(NAME))
+
+$(DIR):
+	mkdir -p $@

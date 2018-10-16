@@ -23,6 +23,8 @@ int main()
     {
         printf("ERROR: couldn't call print() from genlist.h\n");
     }
+    free(elem);
+    free(my_list);
     return 0;
 }
 

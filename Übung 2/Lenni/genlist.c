@@ -14,5 +14,5 @@ int print(node* list, int (*print_element)(void*))
         }
         cur = cur->next;
     }
-    return EXIT_SUCCESS;    
+    return EXIT_SUCCESS;        
 }
