@@ -21,8 +21,9 @@ int main()
     list = add(list,3);
     printList(list);
     list = add(list,4);
-    printList(list);      
-    freeList(list);                
+    printList(list);
+    freeList(list);  
+    list = NULL; // !              
     printList(list);
     return 0;
 }
@@ -65,7 +66,6 @@ void freeList(node* head)
     while(cur!=NULL)
     {
         nex=cur->next;
-        free(cur->data);
         free(cur);
         cur=nex;
     }
