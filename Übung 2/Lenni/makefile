@@ -23,8 +23,7 @@ $(NAME): $(OBJECTS)
 
 clean: 
 	@echo $(shell rm $(DIR)$(NAME) $(OBJECTS))
-	$(shell > DIR)
-#@echo $(shell rm -r -f $(DIR))
+	@echo $(shell rm -r -f $(DIR))
 
 run:
 	$(shell make dir_exists)
