@@ -12,12 +12,17 @@ typedef struct node
 
 node* add(node* head, int data);
 void printList(node*);
+void freeList(node*);
 int main()
 {
     node* list = NULL;
     list = add(list,1);
     list = add(list,2);
     list = add(list,3);
+    printList(list);
+    list=add(list,4);
+    printList(list);      
+    freeList(list);                
     printList(list);
     return 0;
 }
@@ -50,5 +55,22 @@ void printList(node* head)
     {
         printf("%i\n",cur->data);
         cur = cur->next;
+        printf("done\n");
+    }
+    printf("donydone\n");
+}
+
+void freeList(node* head)
+{
+    node* cur=head;
+    node* nex;
+    printf("a");
+    while(cur!=NULL)
+    {
+        printf("delete\n");
+        nex=cur->next;
+        free(cur->data);
+        free(cur);
+        cur=nex;
     }
 }
