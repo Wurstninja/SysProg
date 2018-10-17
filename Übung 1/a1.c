@@ -53,9 +53,8 @@ void printList(node* head)
     node* cur = head;
     while (cur!=NULL)
     {
-        printf("%i\n",cur->data);
+        printf("%i%s",cur->data, cur->next?", ":"\n");
         cur = cur->next;
-        printf("done\n");
     }
     printf("donydone\n");
 }
