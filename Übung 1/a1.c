@@ -20,7 +20,7 @@ int main()
     list = add(list,2);
     list = add(list,3);
     printList(list);
-    list=add(list,4);
+    list = add(list,4);
     printList(list);      
     freeList(list);                
     printList(list);
@@ -56,17 +56,14 @@ void printList(node* head)
         printf("%i%s",cur->data, cur->next?", ":"\n");
         cur = cur->next;
     }
-    printf("donydone\n");
 }
 
 void freeList(node* head)
 {
     node* cur=head;
     node* nex;
-    printf("a");
     while(cur!=NULL)
     {
-        printf("delete\n");
         nex=cur->next;
         free(cur->data);
         free(cur);
