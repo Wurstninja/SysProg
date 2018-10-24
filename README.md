@@ -15,5 +15,5 @@
 
 ## Ressources:
 
-- [Compendium](https://bwuah.me/compendium)
-- [OP Makefile](https://bwuah.me/make)
+- [Compendium](https://www.bwuah.me/compendium)
+- [OP Makefile](https://www.bwuah.me/make)
