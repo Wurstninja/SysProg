@@ -2,8 +2,8 @@
 
 [Assignment Sheet](https://net.cs.uni-bonn.de/fileadmin/user_upload/ploegers/Uebungsblatt03-WS1819.pdf)
 
-- Rust Setup
+- [Rust Setup](https://github.com/Wurstninja/SysProg/issues/4)
 
-- Matrix Operationen in Rust
+- [C: Zufallsmatrizen](https://github.com/Wurstninja/SysProg/issues/5)
 
-- C: Zufallsmatrizen
+- [Matrix Operationen in Rust](https://github.com/Wurstninja/SysProg/issues/6)
