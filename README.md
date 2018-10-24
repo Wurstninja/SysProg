@@ -1,1 +1,4 @@
-# [SysProg 18/19](https://sysprog.bwuah.me)
+# [Home](https://sysprog.bwuah.me)
+
+### maintained by Wurstninja
+### contact sysprog@bwuah.me
