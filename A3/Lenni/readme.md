@@ -63,13 +63,13 @@ int main(int argc, char* argv[])
 
     int rows = strtol(argv[1], &ptr, 10);
 
-    if(errno != 0 || ptr == argv[1])
+    assert(errno == 0);
+
+    if(ptr == argv[1])
     {
-        fprintf(stderr, "ABORT: STRTOL[1] FAILED: %s\n", errno!=0?"ERRNO != 0":"NO NUMERICALS MATCHED");
+        fprintf(stderr, "ABORT: STRTOL[1] FAILED: NO NUMERICALS MATCHED\n");
         return EXIT_FAILURE;
     }
-
-    assert(ptr==NULL || *ptr == 0);
 
     if(ptr != NULL && *ptr != 0)
     {
@@ -79,9 +79,11 @@ int main(int argc, char* argv[])
 
     int cols = strtol(argv[2], &ptr, 10);
 
-    if(errno != 0 || ptr == argv[2])
+    assert(errno == 0);
+    
+    if(ptr == argv[2])
     {
-        fprintf(stderr, "ABORT: STRTOL[2] FAILED: %s\n", errno!=0?"ERRNO != 0":"NO NUMERICALS MATCHED");
+        fprintf(stderr, "ABORT: STRTOL[2] FAILED: NO NUMERICALS MATCHED\n");
         return EXIT_FAILURE;
     }
 
