@@ -30,11 +30,9 @@ popd
 
 ## Aufgabe 9
 
-
-
 ## Aufgabe 10
 
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
