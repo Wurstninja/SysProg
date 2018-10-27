@@ -3,60 +3,42 @@
 #include <string.h>
 #include <errno.h>
 #include <time.h>
-#include <assert.h>
-#include <signal.h>
-
-void abortion(int sig)
-{
-    exit(EXIT_FAILURE);
-}
+#include "bwuassert.h"
 
 #define MAX_VAL 20
 #define MIN_VAL -20
 
 int main(int argc, char* argv[])
 {
-    if(signal(SIGABRT, abortion) == SIG_ERR) exit(1);
-
-    if(argc != 3)
-    {
-        fprintf(stderr, "WRONG NUMBER OF ARGUMENTS\n");
-        return EXIT_FAILURE;
-    }
+    bwuah_msg(argc == 3, "WRONG NUMBER OF ARGUMENTS");
 
     char* ptr;
 
     int rows = strtol(argv[1], &ptr, 10);
 
-    assert(errno == 0);
+    bwuah(errno == 0);
 
-    if(ptr == argv[1])
-    {
-        fprintf(stderr, "ABORT: STRTOL[1] FAILED: NO NUMERICALS MATCHED\n");
-        return EXIT_FAILURE;
-    }
+    bwuah_msg(ptr!=argv[1], "STRTOL[1] FAILED: NO NUMERICALS MATCHED");
 
     if(ptr != NULL && *ptr != 0)
     {
         fprintf(stderr, "WARNING: NOT ALL READ CHARACTERS OF THE FIRST ARGUMENT WERE NUMERICAL\n");
-        printf("->READ: %i (ASCII), '%c' (CHAR)\n", (int) *ptr, *ptr);
+        fprintf(stderr, "->READ: %i (ASCII), '%c' (CHAR)\n", (int) *ptr, *ptr);
     }
 
     int cols = strtol(argv[2], &ptr, 10);
 
-    assert(errno == 0);
+    bwuah(errno == 0);
     
-    if(ptr == argv[2])
-    {
-        fprintf(stderr, "ABORT: STRTOL[2] FAILED: NO NUMERICALS MATCHED\n");
-        return EXIT_FAILURE;
-    }
+    bwuah_msg(ptr!=argv[2], "STRTOL[2] FAILED: NO NUMERICALS MATCHED");
 
     if(ptr != NULL && *ptr != 0)
     {
         fprintf(stderr, "WARNING: NOT ALL READ CHARACTERS OF THE SECOND ARGUMENT WERE NUMERICAL\n");
         printf("->READ: %i (ASCII), '%c' (CHAR)\n", (int) *ptr, *ptr);
     }
+
+    bwuah_warn(MIN_VAL != MAX_VAL, "MIN_VAL equals MAX_VAL");
 
     srand(time(NULL));
 
