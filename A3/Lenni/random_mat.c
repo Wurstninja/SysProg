@@ -6,7 +6,7 @@
 #include "bwuassert.h"
 
 #define MAX_VAL 20
-#define MIN_VAL -20
+#define MIN_VAL 0
 
 int main(int argc, char* argv[])
 {

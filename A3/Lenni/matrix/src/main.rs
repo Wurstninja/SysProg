@@ -7,9 +7,8 @@ fn main()
 
     let mat1: Vec<Vec<i64>> = read_mat(args[1].as_str());
     let mat2: Vec<Vec<i64>> = read_mat(args[3].as_str());
-    print_mat(mat1.clone());
-    print_mat(mat2.clone());
-
+    print_mat(&mat1);
+    print_mat(&mat2);
 
     let mat3: Vec<Vec<i64>>;
 
@@ -20,22 +19,22 @@ fn main()
         _ => panic!("Fuck"),
     }
 
-    print_mat(mat3);
+    print_mat(&mat3);
 }
 
 fn read_mat(s: & str) -> Vec<Vec<i64>>
 {
     let mut mat: Vec<Vec<i64>> = Vec::new();
     let rows = s.split(";");
-    for r in rows
+    let rows_iter = rows.into_iter().enumerate();
+    for (i, r) in rows_iter
     {
-        let mut new: Vec<i64> = Vec::new();
-        let col = r.split(",");
+        mat.push(Vec::new());
+        let col = r.split(",");        
         for c in col
         {
-            new.push(c.parse::<i64>().unwrap());
+            mat[i].push(c.parse::<i64>().unwrap());
         }
-        mat.push(new);
     }
     return mat;
 }
@@ -66,9 +65,9 @@ fn mat_sub(_m1: Vec<Vec<i64>>, _m2: Vec<Vec<i64>>) -> Vec<Vec<i64>>
     panic!("skrrt");
 }
 
-fn print_mat(mat: Vec<Vec<i64>>)
+fn print_mat(mat: &Vec<Vec<i64>>)
 {
-    for i in &mat
+    for i in mat
     {
         for j in i
         {
