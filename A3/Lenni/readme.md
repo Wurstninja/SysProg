@@ -36,7 +36,10 @@ use std::env;
 fn main()
 {
     let args: Vec<String> = env::args().collect();
-    if args.len() !=4 {panic!("Fuck");}
+    if args.len() != 4
+    {
+        panic!("Fuck");
+    }
 
     let mat1: Vec<Vec<i64>> = read_mat(args[1].as_str());
     let mat2: Vec<Vec<i64>> = read_mat(args[3].as_str());
@@ -47,15 +50,15 @@ fn main()
 
     match args[2].as_str()
     {
-        "+" => mat3 = mat_add(mat1, mat2),
-        "-" => mat3 = mat_sub(mat1, mat2),
+        "+" => mat3 = mat_add(&mat1, &mat2),
+        "-" => mat3 = mat_sub(&mat1, &mat2),
         _ => panic!("Fuck"),
     }
 
     print_mat(&mat3);
 }
 
-fn read_mat(s: & str) -> Vec<Vec<i64>>
+fn read_mat(s: &str) -> Vec<Vec<i64>>
 {
     let mut mat: Vec<Vec<i64>> = Vec::new();
     let rows = s.split(";");
@@ -72,12 +75,18 @@ fn read_mat(s: & str) -> Vec<Vec<i64>>
     return mat;
 }
 
-fn mat_add(m1: Vec<Vec<i64>>, m2: Vec<Vec<i64>>) -> Vec<Vec<i64>>
+fn mat_add(m1: &Vec<Vec<i64>>, m2: &Vec<Vec<i64>>) -> Vec<Vec<i64>>
 {
     let num_rows = m1.len();
-    if num_rows != m2.len() {panic!("ERR");}
+    if num_rows != m2.len()
+    {
+        panic!("ERR");
+    }
     let num_cols = m1[0].len();
-    if num_cols != m2[0].len() {panic!("ERR");}
+    if num_cols != m2[0].len()
+    {
+        panic!("ERR");
+    }
 
     let mut mat: Vec<Vec<i64>> = Vec::with_capacity(num_rows);
 
@@ -93,7 +102,7 @@ fn mat_add(m1: Vec<Vec<i64>>, m2: Vec<Vec<i64>>) -> Vec<Vec<i64>>
     return mat;
 }
 
-fn mat_sub(_m1: Vec<Vec<i64>>, _m2: Vec<Vec<i64>>) -> Vec<Vec<i64>>
+fn mat_sub(_m1: &Vec<Vec<i64>>, _m2: &Vec<Vec<i64>>) -> Vec<Vec<i64>>
 {
     panic!("skrrt");
 }

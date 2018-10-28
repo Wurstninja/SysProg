@@ -1,3 +1,29 @@
+# needed to enable features
 unstable_features = true
 
-newline_style="Unix"
+# essential
+control_brace_style = "AlwaysNextLine"
+brace_style = "AlwaysNextLine"
+newline_style = "Unix"
+
+# single lines as much as possible
+empty_item_single_line = true
+fn_single_line = true
+where_single_line = true
+struct_lit_single_line = true
+
+# more code styles 
+space_after_colon = true 
+# space_before_colon = true
+spaces_around_ranges = false
+type_punctuation_density = "Wide"
+
+# tries to condense, don't know if this works
+use_small_heuristics = "Max"
+
+# more cool stuff
+merge_imports = true
+normalize_comments = true
+wrap_comments = true
+report_todo = "Always"
+report_fixme = "Always"
