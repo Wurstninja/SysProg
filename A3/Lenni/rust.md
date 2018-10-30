@@ -17,6 +17,20 @@ contact rust@bwuah.me
 
 `my_string.parse::<i64>().unwrap()`
 
+### Enumerate
+
+`for (index, element) in ___.into_iter().enumerate() {...}`
+
+### Command Line Parameter
+
+`let args: Vec<String> = std::env::args().collect()`  
+`std::env::args()` returns an iterator, `collect()` converts it into a vector.
+
+### Type Hints
+
+`let mat1: Vec<Vec<i64>> = ...`  
+Annotate the type, usually rustc can infere the type.
+
 ## Flow Control
 
 ### For Loop
@@ -38,3 +52,10 @@ match args[2].as_str()
      _  => panic!("Fuck"),
 }
 ```
+
+## Assertions
+
+conditional termination of the programme
+
+- with `assert!(expr)` you check `expr`'s boolean value
+- with `assert!(expr, msg_string)` you customise the message
