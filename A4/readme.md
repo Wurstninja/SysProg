@@ -120,8 +120,8 @@ add   ecx, VAR_3
 wenn `eax != VAR_1` dann wird der low Bereich von edx auf 1 gesetzt  
 mit `xor ecx, ecx` gilt also insgesamt: `edx:=(eax==VAR_1)?0:1`  
 mit `dec edx`gilt also insgesamt: `edx:= (eax==VAR_1) ? -1 : 0`  
-mit `and ecx, VAR_2` gilt also insgesamt: `edx:= (eax==VAR_2) ? (VAR_2-VAR_3) : 0`  
-mit `add ecx, VAR_3` gilt also insgesamt: `edx:= (eax==VAR_2) ? VAR_2 : VAR_3`
+mit `and ecx, VAR_2` gilt also insgesamt: `edx:= (eax==VAR_1) ? (VAR_2-VAR_3) : 0`  
+mit `add ecx, VAR_3` gilt also insgesamt: `edx:= (eax==VAR_1) ? VAR_2 : VAR_3`
 
 ### d)
 
