@@ -1,0 +1,6 @@
+[package]
+name = "sort_rs"
+version = "0.1.0"
+authors = ["Lenni Hein <computerscience@uni-bonn.de>"]
+
+[dependencies]

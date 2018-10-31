@@ -16,3 +16,7 @@ A3/Lenni/matrix/test
 A3/Lenni/matrix/test\.rs
 
 *.o
+
+A4/Lenni/target/
+
+*.lock

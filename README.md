@@ -1,11 +1,12 @@
 # [Home](https://sysprog.bwuah.me)
 
-### maintained by Wurstninja and Bwuah!
-### contact sysprog@bwuah.me
+## maintained by Wurstninja and Bwuah
+
+## contact sysprog@bwuah.me
 
 ---
 
-## Assignments:
+## Assignments
 
 - [A1](https://sysprog.bwuah.me/A1)
 - [A2](https://sysprog.bwuah.me/A2)
@@ -13,7 +14,7 @@
 
 ---
 
-## Ressources:
+## Ressources
 
 - [Compendium](https://www.bwuah.me/compendium)
 - [OP Makefile](https://www.bwuah.me/make)
