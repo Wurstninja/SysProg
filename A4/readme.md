@@ -11,7 +11,7 @@ contact computerscience@uni-bonn.de
 
 ```nasm
 section .data
-    hello: db "Hello, World!", 10    ; 10 for ASCII LF
+    hello: db "Hello, World!", 10   ; 10 for ASCII LF
     hello_strlen equ $ - hello      ; substract the addresses
 
 section .text
