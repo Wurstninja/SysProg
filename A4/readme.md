@@ -87,6 +87,52 @@ _start:
 
 ```
 
+## Aufgabe 13
+
+### a)
+
+```nasm
+xor eax, eax
+```
+
+Entspricht eax := 0
+
+### b) 
+
+```assembly
+lea eax, [eax+eax+4]
+```
+
+Entspricht eax:=eax+eax+4.  
+~~mov eax, eax+eax+4~~ ist nicht gültig.
+
+### c)
+
+```assembly
+xor   ecx, ecx
+cmp   eax, VAR_1
+setnz cl
+dec   ecx
+and   ecx, VAR_2
+add   ecx, VAR_3
+```
+
+wenn `eax != VAR_1` dann wird der low Bereich von edx auf 1 gesetzt  
+mit `xor ecx, ecx` gilt also insgesamt: `edx:=(eax==VAR_1)?0:1`  
+mit `dec edx`gilt also insgesamt: `edx:= (eax==VAR_1) ? -1 : 0`  
+mit `and ecx, VAR_2` gilt also insgesamt: `edx:= (eax==VAR_2) ? (VAR_2-VAR_3) : 0`  
+mit `add ecx, VAR_3` gilt also insgesamt: `edx:= (eax==VAR_2) ? VAR_2 : VAR_3`
+
+### d)
+
+```assembly
+mov   edx, 0xcccccccd
+mul   edx
+shr   edx, 3
+```
+
+multipliziert den Wert in `eax` mit `419430.4`. Dabei werden nur 32bit integer Multiplikationen und Bitshifts verwendet.
+
 ## Aufgabe 14
 
 ```rust
