@@ -113,7 +113,7 @@ xor   ecx, ecx
 cmp   eax, VAR_1
 setnz cl
 dec   ecx
-and   ecx, VAR_2
+and   ecx, VAR_2-VAR_3
 add   ecx, VAR_3
 ```
 
