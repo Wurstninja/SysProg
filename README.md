@@ -8,10 +8,10 @@
 
 ## Assignments
 
-- [A1](https://sysprog.bwuah.me/A1)
-- [A2](https://sysprog.bwuah.me/A2)
-- [A3](https://sysprog.bwuah.me/A3)
-- [A4](https://sysprog.bwuah.me/A4)
+- [A1](http://sysprog.bwuah.me/A1)
+- [A2](http://sysprog.bwuah.me/A2)
+- [A3](http://sysprog.bwuah.me/A3)
+- [A4](http://sysprog.bwuah.me/A4)
 
 ---
 
