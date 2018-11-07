@@ -1,4 +1,4 @@
-# [Home](https://sysprog.bwuah.me)
+# [Home](http://sysprog.bwuah.me)
 
 ## maintained by Wurstninja and Bwuah
 
